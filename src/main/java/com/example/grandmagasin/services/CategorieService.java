@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface CategorieService {
 
-    public List<Categorie> TrouverTousClients();
+    public List<Categorie> TrouverToutesCategories();
     public Optional<Categorie> findById(Long aLong);
 
     public void deleteById(long aLong);

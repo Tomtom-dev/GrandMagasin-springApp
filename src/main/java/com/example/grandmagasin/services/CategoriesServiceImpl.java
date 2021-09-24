@@ -15,7 +15,7 @@ public class CategoriesServiceImpl implements CategorieService{
     }
 
     @Override
-    public List<Categorie> TrouverTousClients() {
+    public List<Categorie> TrouverToutesCategories() {
         return this.repository.findAll();
     }
 

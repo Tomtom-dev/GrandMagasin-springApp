@@ -14,11 +14,11 @@ public class Commande {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "client_id",referencedColumnName = "id")
     private Client client;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "produit.id", referencedColumnName = "id")
     private Set<Produit> produit;
 

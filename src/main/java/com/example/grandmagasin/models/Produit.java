@@ -17,7 +17,7 @@ public class Produit {
     private Float prix;
 
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "categorie_id", referencedColumnName = "id")
     private Categorie categorie;
 }
