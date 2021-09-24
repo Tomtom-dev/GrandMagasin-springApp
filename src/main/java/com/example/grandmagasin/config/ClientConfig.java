@@ -1,5 +1,6 @@
 package com.example.grandmagasin.config;
 
+import com.example.grandmagasin.repositories.CategorieRepository;
 import com.example.grandmagasin.repositories.ClientRepository;
 import com.example.grandmagasin.repositories.CommandeRepository;
 import com.example.grandmagasin.repositories.ProduitRepository;
@@ -24,5 +25,10 @@ public class ClientConfig {
     @Bean
     public ProduitService produitService(ProduitRepository repo){
         return new ProduitServiceImpl(repo);
+    }
+
+    @Bean
+    public CategorieService categorieService(CategorieRepository repo){
+        return new CategoriesServiceImpl(repo);
     }
 }
