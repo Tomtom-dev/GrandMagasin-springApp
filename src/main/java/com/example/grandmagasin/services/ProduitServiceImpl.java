@@ -1,35 +1,36 @@
 package com.example.grandmagasin.services;
 
 import com.example.grandmagasin.models.Produit;
+import com.example.grandmagasin.repositories.ProduitRepository;
 
 import java.util.List;
 import java.util.Optional;
 
 public class ProduitServiceImpl implements ProduitService{
 
-    private  ProduitRepository repository;
+    private ProduitRepository repository;
 
-    public ProduitServiceImpl(){
-
+    public ProduitServiceImpl(ProduitRepository repository){
+    this.repository=repository;
     }
 
     @Override
     public List<Produit> TrouverTousClients() {
-        return null;
+        return this.repository.findAll();
     }
 
     @Override
     public Optional<Produit> findById(Long aLong) {
-        return Optional.empty();
+        return this.repository.findById(aLong);
     }
 
     @Override
     public void deleteById(long aLong) {
-
+        this.repository.deleteById(aLong);
     }
 
     @Override
     public Produit save(Produit entity) {
-        return null;
+        return this.repository.save(entity);
     }
 }
