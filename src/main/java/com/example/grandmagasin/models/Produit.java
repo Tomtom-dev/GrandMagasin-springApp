@@ -11,16 +11,13 @@ public class Produit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long produit_id;
+    private Long id;
 
     private String nom;
     private Float prix;
 
-    @ManyToOne
-    @JoinColumn(name = "categorie_id", referencedColumnName = "")
-    private Categorie categorie;
 
-    @ManyToOne
-    @JoinColumn(name = "commande_id", referencedColumnName = "")
-    private Commande commande;
+    @OneToOne
+    @JoinColumn(name = "categorie_id", referencedColumnName = "id")
+    private Categorie categorie;
 }

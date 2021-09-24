@@ -3,6 +3,7 @@ package com.example.grandmagasin.models;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "client")
@@ -18,4 +19,7 @@ public class Client {
 
     @Column(name = "prenom")
     private String prenom;
+
+    @OneToMany
+    private Set<Commande> commandes;
 }
